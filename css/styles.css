@@ -117,12 +117,11 @@ header {
 .lists-contacts:not(:first-child) {
   margin-left: 50px;
 }
-.active {
-  color: var(--active-color);
-}
+.active,
 .current {
   color: var(--active-color);
 }
+
 .current::after {
   content: "";
   display: block;
@@ -280,12 +279,37 @@ header {
   margin-top: calc(-1 * var(--primary-margin));
 }
 .works-items {
+  position: relative;
   display: block;
   margin-left: var(--primary-margin);
   margin-top: var(--primary-margin);
   flex-basis: calc(
     (100% - var(--primary-margin) * var(--grid-item)) / var(--grid-item)
   );
+}
+.lable-works {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+  opacity: 0;
+  pointer-events: none;
+}
+.works-items:hover .lable-works {
+  opacity: 1;
+}
+.lable-works .lable-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
 }
 
 /* наша команда */
@@ -385,7 +409,7 @@ header {
   border: 1px solid var(--active-color);
 }
 .lists-customer .link:hover .icon-clients,
-.lists-customer .link:focus .icon-cli {
+.lists-customer .link:focus .icon-clients {
   fill: var(--active-color);
 }
 .lists-customer:not(:first-child) {
@@ -518,6 +542,7 @@ address {
   margin-right: calc(-1 * var(--primary-margin));
 }
 .portfolio-img > li {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   flex-basis: calc((100% - 30px * var(--grid-item)) / var(--grid-item));
@@ -553,4 +578,23 @@ address {
 .projects-type {
   font-size: 16px;
   line-height: 1.88;
+}
+.lable-portfolio {
+  display: block;
+  width: 370px;
+  height: 294px;
+  position: absolute;
+  padding: 63px 24px;
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+  pointer-events: none;
+}
+.portfolio-img > li:hover .lable-portfolio {
+  opacity: 1;
+}
+.lable-portfolio > .text-lable {
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--white-color);
 }
