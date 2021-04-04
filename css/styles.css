@@ -117,7 +117,9 @@ header {
 .lists-contacts:not(:first-child) {
   margin-left: 50px;
 }
-
+.active {
+  color: var(--active-color);
+}
 .current {
   color: var(--active-color);
 }
